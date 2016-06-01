@@ -12,12 +12,14 @@
   <!--External resources-->
   <xacro:include filename="$(find pal_gripper_description)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.urdf.xacro" />
-
+  <!-- Generic simulator_gazebo plugins -->
+  <xacro:include filename="$(find pal_gripper_description)/gazebo/gazebo.urdf.xacro" />
+  
   <!--Spawn gripper-->
   <link name="base_link"/>
 
   <xacro:pal_gripper parent="base_link" name="gripper">
-    <origin xyz="0 0 0" rpy="0 ${90 * deg_to_rad} ${90 * deg_to_rad}" />
+    <origin xyz="0 0 0" rpy="0 ${180 * deg_to_rad} ${0 * deg_to_rad}" />
   </xacro:pal_gripper>
 
 </robot>

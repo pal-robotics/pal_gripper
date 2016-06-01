@@ -6,6 +6,7 @@
   <xacro:include filename="$(find pal_gripper_description)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.transmission.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.gazebo.xacro" />
+  <xacro:include filename="$(find pal_gripper_description)/urdf/materials.urdf.xacro" />
 
   <xacro:macro name="pal_gripper" params="name parent *origin">
 
@@ -22,7 +23,7 @@
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_link.stl"/>
       </geometry>
-      <!-- <material name="White"/> -->
+      <material name="White"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
@@ -51,19 +52,22 @@
                izz="0.00018646" />
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="-0.048 0 0" />
+      <origin rpy="0 0 0" xyz="-0.049 0 0" />
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link.stl" scale="-1 -1 1"/>
       </geometry>
-      <!-- <material name="Black"/> -->
+      <material name="White"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.048 0 0" />
+      <origin rpy="0 0 0" xyz="-0.049 0 0" />
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link_collision.stl" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
+  <gazebo reference="${name}_right_finger_link">
+    <material>Gazebo/White</material>
+  </gazebo>
 
   <joint name="${name}_right_finger_joint" type="prismatic">
     <origin rpy="0 0 0" xyz="0. 0 0" />
@@ -84,19 +88,22 @@
                izz="0.00018646" />
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0.048 0 0"/>
+      <origin rpy="0 0 0" xyz="0.049 0 0"/>
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link.stl"/>
       </geometry>
-      <!-- <material name="Black"/> -->
+      <material name="White"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.048 0 0" />
+      <origin rpy="0 0 0" xyz="0.049 0 0" />
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link_collision.stl"/>
       </geometry>
     </collision>
   </link>
+  <gazebo reference="${name}_left_finger_link">
+    <material>Gazebo/White</material>
+  </gazebo>
 
   <joint name="${name}_left_finger_joint" type="prismatic">
     <origin rpy="0 0 0" xyz="0. 0 0" />
