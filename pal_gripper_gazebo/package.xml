@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pal_gripper_gazebo</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>The pal_gripper_gazebo package</description>
 
   <author email="sam.pfeiffer@pal-robotics.com">Sam Pfeiffer</author>
