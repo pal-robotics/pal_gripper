@@ -9,7 +9,7 @@
 
   <license>BSD</license>
 
-
+  <buildtool_depend>catkin</buildtool_depend>
   <run_depend>pal_gripper_description</run_depend>
   <run_depend>pal_gripper_controller_configuration</run_depend>
 

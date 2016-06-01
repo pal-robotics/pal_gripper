@@ -6,7 +6,6 @@
   <xacro:include filename="$(find pal_gripper_description)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.transmission.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.gazebo.xacro" />
-  <xacro:include filename="$(find pal_gripper_description)/urdf/materials.urdf.xacro" />
 
   <xacro:macro name="pal_gripper" params="name parent *origin">
 

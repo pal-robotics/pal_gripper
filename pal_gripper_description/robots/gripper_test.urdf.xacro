@@ -12,9 +12,10 @@
   <!--External resources-->
   <xacro:include filename="$(find pal_gripper_description)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.urdf.xacro" />
+  <xacro:include filename="$(find pal_gripper_description)/urdf/materials.urdf.xacro" />
   <!-- Generic simulator_gazebo plugins -->
   <xacro:include filename="$(find pal_gripper_description)/gazebo/gazebo.urdf.xacro" />
-  
+
   <!--Spawn gripper-->
   <link name="base_link"/>
 
