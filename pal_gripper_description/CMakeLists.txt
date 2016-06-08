@@ -184,3 +184,9 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+foreach(dir gazebo meshes robots urdf)
+    install(DIRECTORY ${dir}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
+
