@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix safety joint limit
+* Contributors: Sam Pfeiffer
+
 0.0.3 (2016-06-13)
 ------------------
 * Added safety controller values
