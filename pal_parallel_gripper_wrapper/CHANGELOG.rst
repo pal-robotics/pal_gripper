@@ -2,8 +2,8 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2016-06-13)
+------------------
 * Fixed package.xml
 * Add changelog
 * Fixed open value
