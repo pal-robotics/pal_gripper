@@ -80,8 +80,8 @@
     <dynamics damping="2500" />
     <safety_controller k_position="20"
                        k_velocity="20"
-                       soft_lower_limit="${0.0 * deg_to_rad + gripper_eps}"
-                       soft_upper_limit="${0.048 * deg_to_rad - gripper_eps}" />
+                       soft_lower_limit="${0.0 + gripper_eps}"
+                       soft_upper_limit="${0.048 - gripper_eps}" />
   </joint>
 
   <link name="${name}_left_finger_link">
@@ -120,8 +120,8 @@
     <dynamics damping="2500" />
     <safety_controller k_position="20"
                        k_velocity="20"
-                       soft_lower_limit="${0.0 * deg_to_rad + gripper_eps}"
-                       soft_upper_limit="${0.048 * deg_to_rad - gripper_eps}" />
+                       soft_lower_limit="${0.0 + gripper_eps}"
+                       soft_upper_limit="${0.048 - gripper_eps}" />
   </joint>
 
   <!-- Grasping frame -->
