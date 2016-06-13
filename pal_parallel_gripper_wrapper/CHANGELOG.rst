@@ -4,6 +4,14 @@ Changelog for package pal_parallel_gripper_wrapper
 
 Forthcoming
 -----------
+* Fixed package.xml
+* Add changelog
+* Fixed open value
+* Add install rules and a couple of testing scripts
+* Tested version
+* initial version of fake parallel gripper controller
+* Contributors: Sam Pfeiffer
+
 * Add install rules and a couple of testing scripts
 * Initial version of fake parallel gripper controller
 * Contributors: Sam Pfeiffer

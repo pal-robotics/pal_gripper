@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Added safety controller values
+* Contributors: Sam Pfeiffer
+
 0.0.2 (2016-06-10)
 ------------------
 * Added install rules

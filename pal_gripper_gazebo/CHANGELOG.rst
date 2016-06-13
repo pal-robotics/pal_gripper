@@ -2,6 +2,9 @@
 Changelog for package pal_gripper_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.2 (2016-06-10)
 ------------------
 
