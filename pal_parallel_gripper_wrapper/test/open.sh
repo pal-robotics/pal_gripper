@@ -8,7 +8,7 @@ rostopic pub /parallel_gripper_controller/command trajectory_msgs/JointTrajector
   frame_id: ''
 joint_names: ['parallel_gripper_joint']
 points:
-- positions: [0.05]
+- positions: [0.096]
   velocities: []
   accelerations: []
   effort: []
