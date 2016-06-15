@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change gripper limit to 0.045
+* Contributors: Victor Lopez
+
 0.0.4 (2016-06-13)
 ------------------
 * Fix safety joint limit
