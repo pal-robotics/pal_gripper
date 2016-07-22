@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2016-07-22)
+------------------
 * remove grasping hack macro and tune friction
 * update meshes and inertia matrices
 * Contributors: Jordi Pages
