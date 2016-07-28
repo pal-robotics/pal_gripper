@@ -2,6 +2,17 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.6 (2016-07-22)
+------------------
+* remove grasping hack macro and tune friction
+* update meshes and inertia matrices
+* Contributors: Jordi Pages
+
+0.0.5 (2016-06-15)
+------------------
+* Change gripper limit to 0.045
+* Contributors: Victor Lopez
+
 0.0.4 (2016-06-13)
 ------------------
 * Fix safety joint limit

@@ -13,11 +13,11 @@
 
   <link name="${name}_link">
     <inertial>
-      <origin rpy="0.0 0.0 0.0" xyz="-0.00028 0.00028 -0.03963" />
-      <mass value="0.71" />
-      <inertia ixx="0.00205962" ixy="0" ixz="0"
-               iyy="0.00250896" iyz="0"
-               izz="0.00086580" />
+      <origin rpy="0.0 0.0 0.0" xyz="-0.000294 0.000291 -0.033086" />
+      <mass value="0.602660" />
+      <inertia ixx="0.000693" ixy="0.000045" ixz="-0.000000"
+               iyy="0.001024" iyz="0.000000"
+               izz="0.000672" />
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
@@ -46,21 +46,21 @@
 
   <link name="${name}_right_finger_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.00402 0.04101 0.01061" />
-      <mass value="0.06" />
-      <inertia ixx="0.00018039" ixy="0" ixz="0"
-               iyy="0.00002373" iyz="0"
-               izz="0.00018646" />
+      <origin rpy="0 0 0" xyz="-0.004470 0.010766 -0.121013" />
+      <mass value="0.109980" />
+      <inertia ixx="0.000232" ixy="-0.000005" ixz="-0.000032"
+               iyy="0.000224" iyz="0.000036"
+               izz="0.000029" />
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="-0.049 0 0" />
+      <origin rpy="0 0 3.1415" xyz="0 0 0" />
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link.stl" scale="-1 -1 1"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.049 0 0" />
+      <origin rpy="0 0 3.1415" xyz="0 0 0" />
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link_collision.stl" scale="-1 -1 1"/>
       </geometry>
@@ -75,32 +75,32 @@
     <parent link="${name}_link" />
     <child link="${name}_right_finger_link" />
     <axis xyz="1 0 0" />
-    <limit effort="28.0" lower="0.0" upper="0.048" velocity="0.1" />
+    <limit effort="16" lower="0.0" upper="0.045" velocity="0.05" />
     <calibration rising="0.0" />
-    <dynamics damping="2500" />
+    <dynamics damping="80" />
     <safety_controller k_position="20"
                        k_velocity="20"
                        soft_lower_limit="${0.0 + gripper_eps}"
-                       soft_upper_limit="${0.048 - gripper_eps}" />
+                       soft_upper_limit="${0.045 - gripper_eps}" />
   </joint>
 
   <link name="${name}_left_finger_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.00402 0.04101 0.01061" />
-      <mass value="0.06" />
-      <inertia ixx="0.00018039" ixy="0" ixz="0"
-               iyy="0.00002373" iyz="0"
-               izz="0.00018646" />
+      <origin rpy="0 0 0" xyz="-0.004470 0.010766 -0.121013" />
+      <mass value="0.109980" />
+      <inertia ixx="0.000232" ixy="-0.000005" ixz="-0.000032"
+               iyy="0.000224" iyz="0.000036"
+               izz="0.000029" />
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0.049 0 0"/>
+      <origin rpy="0 0 3.1415" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link.stl"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.049 0 0" />
+      <origin rpy="0 0 3.1415" xyz="0 0 0" />
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link_collision.stl"/>
       </geometry>
@@ -115,13 +115,13 @@
     <parent link="${name}_link" />
     <child link="${name}_left_finger_link" />
     <axis xyz="-1 0 0" />
-    <limit effort="28.0" lower="0" upper="0.048" velocity="0.1" />
+    <limit effort="16" lower="0" upper="0.045" velocity="0.05" />
     <calibration rising="0.0" />
-    <dynamics damping="2500" />
+    <dynamics damping="80" />
     <safety_controller k_position="20"
                        k_velocity="20"
                        soft_lower_limit="${0.0 + gripper_eps}"
-                       soft_upper_limit="${0.048 - gripper_eps}" />
+                       soft_upper_limit="${0.045 - gripper_eps}" />
   </joint>
 
   <!-- Grasping frame -->
@@ -145,7 +145,6 @@
 
   <xacro:finger_gazebo name="${name}_left_finger"/>
   <xacro:finger_gazebo name="${name}_right_finger"/>
-  <xacro:gripper_grasping_hack name="${name}"/>
 
  </xacro:macro>
 
