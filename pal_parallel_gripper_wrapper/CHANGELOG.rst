@@ -2,6 +2,12 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'master' of gitlab:robots/pal_gripper
+* Added a service to grasp, so, to close the gripper up to a point where its not forcing excesively the motors so they don't warm up so much
+* Contributors: Sam Pfeiffer
+
 0.0.6 (2016-07-22)
 ------------------
 
