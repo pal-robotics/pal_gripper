@@ -61,6 +61,7 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
   scripts/parallel_gripper_fake.py
+  scripts/gripper_grasping.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
