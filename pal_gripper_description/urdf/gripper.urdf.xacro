@@ -60,9 +60,9 @@
       <material name="White"/>
     </visual>
     <collision>
-      <origin rpy="0 0 3.1415" xyz="0 0 0" />
+      <origin rpy="0 0 3.1415" xyz="0.005 0 -0.165" />
       <geometry>
-        <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link_collision.stl" scale="-1 -1 1"/>
+        <box size="0.01 0.05 0.11"/>
       </geometry>
     </collision>
   </link>
@@ -100,9 +100,9 @@
       <material name="White"/>
     </visual>
     <collision>
-      <origin rpy="0 0 3.1415" xyz="0 0 0" />
+      <origin rpy="0 0 3.1415" xyz="-0.005 0 -0.165" />
       <geometry>
-        <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link_collision.stl"/>
+        <box size="0.01 0.05 0.11"/>
       </geometry>
     </collision>
   </link>
