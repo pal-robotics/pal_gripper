@@ -4,4 +4,5 @@
         args="--timeout 120
               gripper_controller" />
   <!-- <node name="home_gripper" pkg="tiago_controller_configuration" type="home_gripper.py" output="screen"/> -->
+  <include file="$(find pal_gripper_controller_configuration)/launch/current_limit_controllers.launch"/>
 </launch>
