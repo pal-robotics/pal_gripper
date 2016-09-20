@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* use box for fingers' collision model
+* Contributors: Jordi Pages
+
 0.0.7 (2016-07-28)
 ------------------
 
