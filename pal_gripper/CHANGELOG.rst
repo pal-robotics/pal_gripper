@@ -23,8 +23,8 @@ Changelog for package pal_gripper
 0.0.2 (2016-06-10)
 ------------------
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * fix maintainer
 * 0.0.8
 * Update changelog

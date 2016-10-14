@@ -27,8 +27,8 @@ Changelog for package pal_gripper_controller_configuration
 * Added install rules pal gripper configuration
 * Contributors: Hilario Tome
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * fix maintainer
 * 0.0.8
 * Update changelog

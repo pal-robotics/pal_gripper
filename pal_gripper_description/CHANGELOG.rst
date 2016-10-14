@@ -36,8 +36,8 @@ Changelog for package pal_gripper_description
 * Added install rules
 * Contributors: Hilario Tome
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * Fixed problem with gripper_grasping_frame in wrong position
 * fix maintainer
 * 0.0.8
