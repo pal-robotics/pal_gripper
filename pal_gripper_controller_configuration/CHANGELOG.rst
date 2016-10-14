@@ -27,6 +27,27 @@ Changelog for package pal_gripper_controller_configuration
 * Added install rules pal gripper configuration
 * Contributors: Hilario Tome
 
+Forthcoming
+-----------
+* fix maintainer
+* 0.0.8
+* Update changelog
+* Launch current limit controller
+* 0.0.7
+* Update changelogs
+* 0.0.6
+* Update cahngelog
+* 0.0.5
+* Update changelog
+* 0.0.4
+* Update changelgo
+* 0.0.3
+* Update changelogs
+* 0.0.2
+* Updated the changelog
+* Added install rules pal gripper configuration
+* Contributors: Hilario Tome, Jordi Pages, Sam Pfeiffer, Victor Lopez
+
 0.0.1 (2016-06-01)
 ------------------
 * Initial version
