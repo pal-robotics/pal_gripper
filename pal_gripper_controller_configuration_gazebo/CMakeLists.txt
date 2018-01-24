@@ -4,7 +4,7 @@ project(pal_gripper_controller_configuration_gazebo)
 find_package(catkin REQUIRED)
 catkin_package()
 
-foreach(dir config launch)
+foreach(dir launch)
     install(DIRECTORY ${dir}/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
