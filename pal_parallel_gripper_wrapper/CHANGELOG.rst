@@ -2,6 +2,11 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* move scripts and config files from tiago_robot
+* Contributors: Jordi Pages
+
 0.0.8 (2016-09-20)
 ------------------
 
