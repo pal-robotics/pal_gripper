@@ -2,31 +2,6 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.0.8 (2016-09-20)
-------------------
-* Launch current limit controller
-* Contributors: Victor Lopez
-
-0.0.7 (2016-07-28)
-------------------
-
-0.0.6 (2016-07-22)
-------------------
-
-0.0.5 (2016-06-15)
-------------------
-
-0.0.4 (2016-06-13)
-------------------
-
-0.0.3 (2016-06-13)
-------------------
-
-0.0.2 (2016-06-10)
-------------------
-* Added install rules pal gripper configuration
-* Contributors: Hilario Tome
-
 Forthcoming
 -----------
 * move scripts and config files from tiago_robot
