@@ -2,7 +2,7 @@
 Changelog for package pal_gripper_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.10 (2018-01-24)
+-------------------
 * move scripts and config files from tiago_robot
 * Contributors: Jordi Pages
