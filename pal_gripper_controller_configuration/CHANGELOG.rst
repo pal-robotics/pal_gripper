@@ -27,6 +27,11 @@ Changelog for package pal_gripper_controller_configuration
 * Added install rules pal gripper configuration
 * Contributors: Hilario Tome
 
+Forthcoming
+-----------
+* move scripts and config files from tiago_robot
+* Contributors: Jordi Pages
+
 0.0.9 (2016-10-14)
 ------------------
 * fix maintainer
