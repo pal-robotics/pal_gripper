@@ -1,0 +1,11 @@
+<launch>
+
+  <rosparam command="load" file="$(find pal_gripper_controller_configuration)/config/pids.yaml"/>
+  <!-- Current limit controllers -->
+  <rosparam command="load" file="$(find pal_gripper_controller_configuration)/config/joint_trajectory_controllers.yaml" />
+
+  <!-- Controllers that come up started -->
+  <node name="joint_trajectory_controllers_spawner"
+        pkg="controller_manager" type="spawner" output="screen"
+        args="--timeout 120 gripper_controller" />
+</launch>
