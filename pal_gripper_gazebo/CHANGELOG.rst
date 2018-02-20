@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* install launch files
+* Contributors: Jordi Pages
+
 0.0.11 (2018-01-24)
 -------------------
 

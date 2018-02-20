@@ -2,6 +2,9 @@
 Changelog for package pal_gripper_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.11 (2018-01-24)
 -------------------
 * fix installation rule
