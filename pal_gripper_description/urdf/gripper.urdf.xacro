@@ -11,6 +11,23 @@
 
   <xacro:macro name="pal_gripper" params="name parent *origin">
 
+  <link name="${name}_tool_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0"
+               izz="0.00001" />
+    </inertial>
+  </link>
+
+  <joint name="${name}_tool_joint" type="fixed">
+    <insert_block name="origin"/>
+    <parent link="${parent}" />
+    <child link="${name}_tool_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
   <link name="${name}_link">
     <inertial>
       <origin rpy="0.0 0.0 0.0" xyz="-0.000294 0.000291 -0.033086" />
