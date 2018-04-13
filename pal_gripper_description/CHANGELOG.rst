@@ -2,6 +2,14 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-tool-link' into 'dubnium-devel'
+  Add tool link
+  See merge request robots/pal_gripper!4
+* Add tool link
+* Contributors: Hilario Tome, Victor Lopez
+
 0.0.12 (2018-02-20)
 -------------------
 
