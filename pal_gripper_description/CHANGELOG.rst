@@ -2,6 +2,15 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-simulation-warnings' into 'erbium-devel'
+  Fix simulation warnings
+  See merge request robots/pal_gripper!6
+* prepend missing 'xacro' tag
+* remove link color discrepancy
+* Contributors: Jordi Pages, Victor Lopez
+
 0.0.13 (2018-04-13)
 -------------------
 * Merge branch 'add-tool-link' into 'dubnium-devel'
