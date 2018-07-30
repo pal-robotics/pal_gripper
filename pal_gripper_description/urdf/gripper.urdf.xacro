@@ -74,7 +74,7 @@
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link.stl" scale="-1 -1 1"/>
       </geometry>
-      <material name="White"/>
+      <material name="Black"/>
     </visual>
     <collision>
       <origin rpy="0 0 3.1415" xyz="0.005 0 -0.165" />
@@ -84,7 +84,7 @@
     </collision>
   </link>
   <gazebo reference="${name}_right_finger_link">
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
   </gazebo>
 
   <joint name="${name}_right_finger_joint" type="prismatic">
@@ -114,7 +114,7 @@
       <geometry>
         <mesh filename="package://pal_gripper_description/meshes/gripper_finger_link.stl"/>
       </geometry>
-      <material name="White"/>
+      <material name="Black"/>
     </visual>
     <collision>
       <origin rpy="0 0 3.1415" xyz="-0.005 0 -0.165" />
@@ -124,7 +124,7 @@
     </collision>
   </link>
   <gazebo reference="${name}_left_finger_link">
-    <material>Gazebo/White</material>
+    <material>Gazebo/Black</material>
   </gazebo>
 
   <joint name="${name}_left_finger_joint" type="prismatic">
