@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2018-07-30)
+------------------
 * Merge branch 'fix-simulation-warnings' into 'erbium-devel'
   Fix simulation warnings
   See merge request robots/pal_gripper!6
