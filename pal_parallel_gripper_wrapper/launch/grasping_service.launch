@@ -1,5 +1,7 @@
 <launch>
-    <node pkg="pal_parallel_gripper_wrapper" name="gripper_grasping" type="gripper_grasping.py" output="screen">
+    <arg name="suffix" default=""/>
+    <node pkg="pal_parallel_gripper_wrapper" name="gripper$(arg suffix)_grasping" type="gripper_grasping.py" output="screen">
+        <rosparam command="load" file="$(find pal_parallel_gripper_wrapper)/config/parallel_gripper$(arg suffix).yaml" />
         <!-- Dynamic reconfigure parameters -->
         <param name="grasper/max_position_error" type="double" value="0.002"/>
         <param name="grasper/timeout" type="double" value="5.0"/>

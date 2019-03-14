@@ -39,20 +39,29 @@ class GripperGrasper(object):
 
         # Subscriber to the gripper state
         self.last_state = None
-        self.state_sub = rospy.Subscriber('/gripper_controller/state',
+        self.controller_name = rospy.get_param("~controller_name", None)
+        if not self.controller_name:
+            rospy.logerr("No controller name found in param: ~controller_name")
+            exit(1)
+        self.real_joint_names = rospy.get_param("~real_joint_names", None)
+        if not self.real_joint_names:
+            rospy.logerr(
+                "No real joint names given in param: ~real_joint_names")
+            exit(1)
+        self.state_sub = rospy.Subscriber('/' + self.controller_name + '_controller/state',
                                           JointTrajectoryControllerState,
                                           self.state_cb,
                                           queue_size=1)
         rospy.loginfo("Subscribed to topic: " + str(self.state_sub.resolved_name))
 
         # Publisher on the gripper command topic
-        self.cmd_pub = rospy.Publisher('/gripper_controller/command',
+        self.cmd_pub = rospy.Publisher('/' + self.controller_name + '_controller/command',
                                        JointTrajectory,
                                        queue_size=1)
         rospy.loginfo("Publishing to topic: " + str(self.cmd_pub.resolved_name))
 
         # Grasping service to offer
-        self.grasp_srv = rospy.Service('/gripper_controller/grasp',
+        self.grasp_srv = rospy.Service('/' + self.controller_name + '_controller/grasp',
                                        Empty,
                                        self.grasp_cb)
         rospy.loginfo("Offering grasp service on: " + str(self.grasp_srv.resolved_name))
@@ -106,8 +115,7 @@ class GripperGrasper(object):
     def send_close(self, closing_amount):
         rospy.loginfo("Closing: " + str(closing_amount))
         jt = JointTrajectory()
-        jt.joint_names = ['gripper_right_finger_joint',
-                          'gripper_left_finger_joint']
+        jt.joint_names = self.real_joint_names
         p = JointTrajectoryPoint()
         p.positions = closing_amount
         p.time_from_start = rospy.Duration(self.closing_time)

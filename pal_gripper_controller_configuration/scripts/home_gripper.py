@@ -6,11 +6,15 @@ from control_msgs.msg import FollowJointTrajectoryAction, FollowJointTrajectoryG
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from sensor_msgs.msg import JointState
 
-joint_names = ["gripper_left_finger_joint", "gripper_right_finger_joint"]
 closed  = [0.045, 0.045]
 
 if __name__ == "__main__":
   rospy.init_node("home_gripper")
+  suffix = rospy.get_param("~suffix", None)
+  if suffix == None:
+      rospy.logerr("No suffix found in param: ~suffix")
+      exit(1)
+  joint_names = ["gripper" + suffix + "_left_finger_joint", "gripper" + suffix + "_right_finger_joint"]
   rospy.loginfo("Waiting for gripper_controller...")
   client = actionlib.SimpleActionClient("gripper_controller/follow_joint_trajectory", FollowJointTrajectoryAction)
   client.wait_for_server()
