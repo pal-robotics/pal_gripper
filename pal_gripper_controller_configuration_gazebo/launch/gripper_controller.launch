@@ -6,8 +6,8 @@
         pkg="controller_manager" type="spawner" output="screen"
         args="--timeout 120
               gripper$(arg suffix)_controller" />
-  <node name="home_gripper" pkg="pal_gripper_controller_configuration" type="home_gripper.py" output="screen">
-    <arg name="suffix" value="$(arg suffix)"/>
+  <node name="home_gripper$(arg suffix)" pkg="pal_gripper_controller_configuration" type="home_gripper.py" output="screen">
+    <param name="suffix" value="$(arg suffix)"/>
   </node>
 </launch>
 

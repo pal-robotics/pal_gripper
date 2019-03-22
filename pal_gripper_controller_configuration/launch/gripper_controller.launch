@@ -13,7 +13,7 @@
   <include file="$(find pal_parallel_gripper_wrapper)/launch/parallel_gripper.launch">
     <arg name="suffix" value="$(arg suffix)"/>
   </include>
-  <node name="home_gripper" pkg="pal_gripper_controller_configuration" type="home_gripper.py" output="screen">
+  <node name="home_gripper$(arg suffix)" pkg="pal_gripper_controller_configuration" type="home_gripper.py" output="screen">
     <arg name="suffix" value="$(arg suffix)"/>
   </node>
 </launch>
