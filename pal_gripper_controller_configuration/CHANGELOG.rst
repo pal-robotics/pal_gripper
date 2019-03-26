@@ -2,6 +2,16 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-sides' into 'erbium-devel'
+  Add option to specify side of gripper
+  See merge request robots/pal_gripper!7
+* Fix suffix usage
+* Fix action server name
+* Add option to specify side of gripper
+* Contributors: Victor Lopez
+
 1.0.0 (2018-07-30)
 ------------------
 

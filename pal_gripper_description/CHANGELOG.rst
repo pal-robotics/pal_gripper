@@ -2,6 +2,25 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-sides' into 'erbium-devel'
+  Add option to specify side of gripper
+  See merge request robots/pal_gripper!7
+* Fix missing dependency
+* Merge branch 'fix_xacro_warning' into 'erbium-devel'
+  fix xacro warning
+  See merge request robots/pal_gripper!5
+* rm usuless xacro property
+* Added Sanity check
+* deprecate upload_gripper.launch
+* fix xacro.py deprecation warning
+* fix xacro warning
+  deprecated: xacro tags should be prepended with 'xacro' xml namespace.
+  Use the following script to fix incorrect usage:
+  find . -iname "*.xacro" | xargs sed -i 's#<\([/]\?\)\(if\|unless\|include\|arg\|property\|macro\|insert_block\)#<\1xacro:\2#g'
+* Contributors: Jeremie Deray, Jordi Pages, Victor Lopez, davidfernandez
+
 1.0.0 (2018-07-30)
 ------------------
 * Merge branch 'fix-simulation-warnings' into 'erbium-devel'
