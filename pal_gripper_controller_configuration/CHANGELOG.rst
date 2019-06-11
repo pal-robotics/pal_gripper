@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2019-06-11)
+------------------
 * Merge branch 'more-side-fixes' into 'erbium-devel'
   More side fixes
   See merge request robots/pal_gripper!8
