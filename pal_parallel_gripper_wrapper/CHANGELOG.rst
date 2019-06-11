@@ -2,6 +2,14 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'more-side-fixes' into 'erbium-devel'
+  More side fixes
+  See merge request robots/pal_gripper!8
+* More side fixes
+* Contributors: Victor Lopez
+
 1.0.1 (2019-03-26)
 ------------------
 * Merge branch 'add-sides' into 'erbium-devel'

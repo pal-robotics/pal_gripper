@@ -2,6 +2,9 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.1 (2019-03-26)
 ------------------
 * Merge branch 'add-sides' into 'erbium-devel'
