@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2020-04-30)
+------------------
 * Merge branch 'removed_open_gripper' into 'erbium-devel'
   Removed open gripper node in launch
   See merge request robots/pal_gripper!9
