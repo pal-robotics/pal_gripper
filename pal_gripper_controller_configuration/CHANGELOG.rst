@@ -2,6 +2,14 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'removed_open_gripper' into 'erbium-devel'
+  Removed open gripper node in launch
+  See merge request robots/pal_gripper!9
+* Removed open gripper node in launch
+* Contributors: saikishor, victor
+
 1.0.2 (2019-06-11)
 ------------------
 * Merge branch 'more-side-fixes' into 'erbium-devel'

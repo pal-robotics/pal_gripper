@@ -2,6 +2,9 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.2 (2019-06-11)
 ------------------
 * Merge branch 'more-side-fixes' into 'erbium-devel'
