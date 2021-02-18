@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>pal_gripper_controller_configuration</name>
   <version>1.0.3</version>
   <description>The pal_gripper_controller_configuration package</description>
@@ -10,9 +10,13 @@
 
   <license>BSD</license>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>controller_manager</run_depend>
-  <run_depend>position_controllers</run_depend>
-  <run_depend>joint_trajectory_controller</run_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>position_controllers</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 </package>

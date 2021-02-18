@@ -1,16 +1,11 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(pal_gripper_controller_configuration)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake_auto REQUIRED)
 
-catkin_package(
-)
+# better way to do this?
+# install(PROGRAMS scripts/home_gripper.py
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
-foreach(dir config launch)
-    install(DIRECTORY ${dir}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
-
-install(PROGRAMS scripts/home_gripper.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+ament_auto_package(INSTALL_TO_SHARE config launch)
 
