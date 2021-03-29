@@ -2,8 +2,8 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4 (2021-03-29)
+------------------
 * Merge branch 'gripper_state_fix' into 'erbium-devel'
   Gripper state fix
   See merge request robots/pal_gripper!10
