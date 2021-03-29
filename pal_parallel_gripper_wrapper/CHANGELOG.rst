@@ -2,6 +2,15 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'gripper_state_fix' into 'erbium-devel'
+  Gripper state fix
+  See merge request robots/pal_gripper!10
+* Fix the node name to avoid double underscores
+* Update gripper_grasping.py
+* Contributors: jordanpalacios, saikishor
+
 1.0.3 (2020-04-30)
 ------------------
 
