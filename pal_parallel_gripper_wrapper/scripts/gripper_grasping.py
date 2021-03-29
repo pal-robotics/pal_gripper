@@ -43,12 +43,16 @@ class GripperGrasper(object):
         if not self.controller_name:
             rospy.logerr("No controller name found in param: ~controller_name")
             exit(1)
+        self.real_controller_name = rospy.get_param("~real_controller_name", None)
+        if not self.real_controller_name:
+            rospy.logerr("No controller name found in param: ~real_controller_name")
+            exit(1)
         self.real_joint_names = rospy.get_param("~real_joint_names", None)
         if not self.real_joint_names:
             rospy.logerr(
                 "No real joint names given in param: ~real_joint_names")
             exit(1)
-        self.state_sub = rospy.Subscriber('/' + self.controller_name + '_controller/state',
+        self.state_sub = rospy.Subscriber('/' + self.real_controller_name + '_controller/state',
                                           JointTrajectoryControllerState,
                                           self.state_cb,
                                           queue_size=1)
