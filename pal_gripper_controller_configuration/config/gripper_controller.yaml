@@ -4,6 +4,10 @@
     joints:
       - gripper_right_finger_joint
       - gripper_left_finger_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
 
     constraints:
       goal_time: 0.6
