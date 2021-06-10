@@ -59,7 +59,7 @@ class GripperGrasper(object):
         rospy.loginfo("Subscribed to topic: " + str(self.state_sub.resolved_name))
 
         # Publisher on the gripper command topic
-        self.cmd_pub = rospy.Publisher('/' + self.controller_name + '_controller/command',
+        self.cmd_pub = rospy.Publisher('/' + self.real_controller_name + '_controller/command',
                                        JointTrajectory,
                                        queue_size=1)
         rospy.loginfo("Publishing to topic: " + str(self.cmd_pub.resolved_name))
