@@ -23,7 +23,7 @@ class GripperGrasper(object):
         self.ddr = DDynamicReconfigure("grasper")
         self.max_position_error = self.ddr.add_variable("max_position_error",
                                                         "Max absolute value of controller state of any joint to stop closing",
-                                                        0.002, 0.00001, 0.045)
+                                                        0.0015, 0.00001, 0.045)
         self.timeout = self.ddr.add_variable("timeout",
                                              "timeout for the closing action",
                                              5.0, 0.0, 30.0)
