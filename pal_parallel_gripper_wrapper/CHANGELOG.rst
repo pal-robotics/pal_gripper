@@ -2,6 +2,15 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'grasp_service_fix' into 'erbium-devel'
+  Grasp service fix
+  See merge request robots/pal_gripper!11
+* Reduce a bit the max position error
+* Fix the command publisher topic name
+* Contributors: Sai Kishor Kothakota, victor
+
 1.0.4 (2021-03-29)
 ------------------
 * Merge branch 'gripper_state_fix' into 'erbium-devel'
