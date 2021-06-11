@@ -2,8 +2,8 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.5 (2021-06-11)
+------------------
 * Merge branch 'grasp_service_fix' into 'erbium-devel'
   Grasp service fix
   See merge request robots/pal_gripper!11
