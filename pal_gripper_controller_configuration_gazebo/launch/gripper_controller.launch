@@ -9,5 +9,9 @@
   <node name="home_gripper$(arg suffix)" pkg="pal_gripper_controller_configuration" type="home_gripper.py" output="screen">
     <param name="suffix" value="$(arg suffix)"/>
   </node>
+    <!-- fake parallel gripper controller to expose only one joint to open and close -->
+  <include file="$(find pal_parallel_gripper_wrapper)/launch/parallel_gripper.launch">
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
 </launch>
 
