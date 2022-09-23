@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.6 (2022-09-23)
+------------------
 * Merge branch 'grasping-service-simulation' into 'erbium-devel'
   enable grasping service in simulation
   See merge request robots/pal_gripper!13
