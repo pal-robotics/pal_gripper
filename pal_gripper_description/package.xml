@@ -16,11 +16,9 @@
   <build_depend>xacro</build_depend>
 
   <exec_depend>xacro</exec_depend>
-  <exec_depend>rosbash</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-  <test_depend>rostest</test_depend>
   <test_depend>urdf_test</test_depend>
 
   <export>
