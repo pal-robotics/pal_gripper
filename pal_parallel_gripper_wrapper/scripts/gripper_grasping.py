@@ -10,9 +10,11 @@ so to skip overheating.
 """
 
 import rospy
+from sensor_msgs.msg import JointState
 from control_msgs.msg import JointTrajectoryControllerState
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from std_srvs.srv import Empty, EmptyResponse
+from std_msgs.msg import Bool
 from ddynamic_reconfigure_python.ddynamic_reconfigure import DDynamicReconfigure
 
 
@@ -52,6 +54,13 @@ class GripperGrasper(object):
             rospy.logerr(
                 "No real joint names given in param: ~real_joint_names")
             exit(1)
+
+        self.state_sub = rospy.Subscriber('/joint_states',
+                                          JointState,
+                                          self.joint_cb,
+                                          queue_size=1)
+        rospy.loginfo("Subscribed to topic: " + str(self.state_sub.resolved_name))
+
         self.state_sub = rospy.Subscriber('/' + self.real_controller_name + '_controller/state',
                                           JointTrajectoryControllerState,
                                           self.state_cb,
@@ -69,6 +78,12 @@ class GripperGrasper(object):
                                        Empty,
                                        self.grasp_cb)
         rospy.loginfo("Offering grasp service on: " + str(self.grasp_srv.resolved_name))
+
+        # Publish a boolean to know if an object is grasped or not
+        self.pub_js = rospy.Publisher("{}_controller/is_grasped".format(self.controller_name), Bool , queue_size=1)
+        self.is_grasped_msg = Bool()
+        self.on_optimal_close = False
+
         rospy.loginfo("Done initializing GripperGrasper!")
 
     def ddr_cb(self, config, level):
@@ -77,6 +92,16 @@ class GripperGrasper(object):
         self.closing_time = config['closing_time']
         self.rate = config['rate']
         return config
+
+    def joint_cb(self, data):
+        if self.on_optimal_close is True:
+            self.is_grasped_msg.data = True
+            if data.effort[7] >= -0.05 or data.effort[8] >= -0.05:
+                self.is_grasped_msg.data = False
+                self.on_optimal_close = False
+        else:
+            self.is_grasped_msg.data = False
+        self.pub_js.publish(self.is_grasped_msg)
 
 
     def state_cb(self, data):
@@ -95,17 +120,16 @@ class GripperGrasper(object):
         self.send_close(closing_amount)
         rospy.sleep(self.closing_time)
         r = rospy.Rate(self.rate)
-        on_optimal_close = False
-        while not rospy.is_shutdown() and (rospy.Time.now() - initial_time) < rospy.Duration(self.timeout) and not on_optimal_close:
+        while not rospy.is_shutdown() and (rospy.Time.now() - initial_time) < rospy.Duration(self.timeout) and not self.on_optimal_close:
             if -self.last_state.error.positions[0] > self.max_position_error:
                 rospy.logdebug("Over error joint 0...")
                 closing_amount = self.get_optimal_close()
-                on_optimal_close = True
+                self.on_optimal_close = True
 
             elif -self.last_state.error.positions[1] > self.max_position_error:
                 rospy.logdebug("Over error joint 1...")
                 closing_amount = self.get_optimal_close()
-                on_optimal_close = True
+                self.on_optimal_close = True
             self.send_close(closing_amount)
             r.sleep()
 
