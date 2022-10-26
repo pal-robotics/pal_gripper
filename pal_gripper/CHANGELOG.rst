@@ -2,6 +2,19 @@
 Changelog for package pal_gripper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'update_copyright' into 'humble-devel'
+  Update copyright and add LICENSE
+  See merge request robots/pal_gripper!15
+* update copyright and add license
+* Merge branch 'update_maintainers' into 'humble-devel'
+  update maintainers
+  See merge request robots/pal_gripper!14
+* update maintainers
+* ros2 format. Disabled some packages
+* Contributors: Jordan Palacios, Noel Jimenez
+
 1.0.3 (2020-04-30)
 ------------------
 

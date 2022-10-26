@@ -2,6 +2,33 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'cleanup' into 'humble-devel'
+  Remove ros deps
+  See merge request robots/pal_gripper!18
+* rm ros deps
+* Merge branch 'linters' into 'humble-devel'
+  Linters
+  See merge request robots/pal_gripper!17
+* add linters
+* Merge branch 'add_friction' into 'humble-devel'
+  Add friction to gripper fingers
+  See merge request robots/pal_gripper!16
+* add friction to gripper fingers
+* Merge branch 'update_copyright' into 'humble-devel'
+  Update copyright and add LICENSE
+  See merge request robots/pal_gripper!15
+* update copyright and add license
+* Merge branch 'update_maintainers' into 'humble-devel'
+  update maintainers
+  See merge request robots/pal_gripper!14
+* update maintainers
+* Adapted pal_gripper_controller_configuration to ros2
+  Added ros2_control xacro file
+* ros2 format. Disabled some packages
+* Contributors: Jordan Palacios, Noel Jimenez
+
 1.0.3 (2020-04-30)
 ------------------
 

@@ -2,6 +2,33 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'linters' into 'humble-devel'
+  Linters
+  See merge request robots/pal_gripper!17
+* linters
+* add linters
+* Merge branch 'update_copyright' into 'humble-devel'
+  Update copyright and add LICENSE
+  See merge request robots/pal_gripper!15
+* update copyright and add license
+* Merge branch 'update_maintainers' into 'humble-devel'
+  update maintainers
+  See merge request robots/pal_gripper!14
+* update maintainers
+* Merge branch 'move_gripper_controller_launch' into 'foxy-devel'
+  move controller launch to tiago_controller_configuration
+  See merge request robots/pal_gripper!12
+* move controller launch to tiago_controller_configuration
+* Added new parameters required for joint trajectory controllers
+* Use correct namespacing for parameters
+* Using controller_manager launch_utils
+* Adapted pal_gripper_controller_configuration to ros2
+  Added ros2_control xacro file
+* ros2 format. Disabled some packages
+* Contributors: Jordan Palacios, Noel Jimenez, cescfolch, victor
+
 1.0.3 (2020-04-30)
 ------------------
 * Merge branch 'removed_open_gripper' into 'erbium-devel'
