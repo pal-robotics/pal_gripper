@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2022-10-26)
+------------------
 * Merge branch 'linters' into 'humble-devel'
   Linters
   See merge request robots/pal_gripper!17
