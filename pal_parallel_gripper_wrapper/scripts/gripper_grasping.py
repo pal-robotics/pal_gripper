@@ -10,7 +10,6 @@ so to skip overheating.
 """
 
 import rospy
-from sensor_msgs.msg import JointState
 from control_msgs.msg import JointTrajectoryControllerState
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from std_srvs.srv import Empty, EmptyResponse
@@ -55,11 +54,6 @@ class GripperGrasper(object):
                 "No real joint names given in param: ~real_joint_names")
             exit(1)
 
-        self.state_sub = rospy.Subscriber('/joint_states',
-                                          JointState,
-                                          self.joint_cb,
-                                          queue_size=1)
-        rospy.loginfo("Subscribed to topic: " + str(self.state_sub.resolved_name))
 
         self.state_sub = rospy.Subscriber('/' + self.real_controller_name + '_controller/state',
                                           JointTrajectoryControllerState,
@@ -80,7 +74,7 @@ class GripperGrasper(object):
         rospy.loginfo("Offering grasp service on: " + str(self.grasp_srv.resolved_name))
 
         # Publish a boolean to know if an object is grasped or not
-        self.pub_js = rospy.Publisher("{}_controller/is_grasped".format(self.controller_name), Bool , queue_size=1)
+        self.pub_js = rospy.Publisher("{}/is_grasped".format(self.controller_name), Bool , queue_size=1)
         self.is_grasped_msg = Bool()
         self.on_optimal_close = False
 
@@ -93,19 +87,16 @@ class GripperGrasper(object):
         self.rate = config['rate']
         return config
 
-    def joint_cb(self, data):
+    def state_cb(self, data):
+        self.last_state = data
         if self.on_optimal_close is True:
             self.is_grasped_msg.data = True
-            if data.effort[7] >= -0.05 or data.effort[8] >= -0.05:
+            if -self.last_state.error.positions[0] < 0.0005 and -self.last_state.error.positions[1] < 0.0005:
                 self.is_grasped_msg.data = False
                 self.on_optimal_close = False
         else:
             self.is_grasped_msg.data = False
         self.pub_js.publish(self.is_grasped_msg)
-
-
-    def state_cb(self, data):
-        self.last_state = data
 
     def grasp_cb(self, req):
         rospy.logdebug("Received grasp request!")
@@ -116,9 +107,11 @@ class GripperGrasper(object):
         # or we reach timeout
         initial_time = rospy.Time.now()
         closing_amount = [0.0, 0.0]
-        # Initial command, wait for it to do something
-        self.send_close(closing_amount)
-        rospy.sleep(self.closing_time)
+        # If statement in case the service is called again after a sucessful grasp
+        if self.on_optimal_close is False:
+            # Initial command, wait for it to do something
+            self.send_close(closing_amount)
+            rospy.sleep(self.closing_time)
         r = rospy.Rate(self.rate)
         while not rospy.is_shutdown() and (rospy.Time.now() - initial_time) < rospy.Duration(self.timeout) and not self.on_optimal_close:
             if -self.last_state.error.positions[0] > self.max_position_error:
