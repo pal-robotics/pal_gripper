@@ -2,6 +2,9 @@
 Changelog for package pal_gripper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 3.0.0 (2022-10-26)
 ------------------
 * Merge branch 'update_copyright' into 'humble-devel'
