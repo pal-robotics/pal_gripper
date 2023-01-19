@@ -6,6 +6,7 @@
         <param name="grasper/max_position_error" type="double" value="0.002"/>
         <param name="grasper/timeout" type="double" value="5.0"/>
         <param name="grasper/closing_time" type="double" value="2.0"/>
+        <param name="grasper/opening_time" type="double" value="2.0"/>
         <param name="grasper/rate" type="int" value="5"/>
         <param name="grasper/tolerance" type="double" value="0.002"/>
     </node>

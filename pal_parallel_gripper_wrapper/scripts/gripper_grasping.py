@@ -29,7 +29,10 @@ class GripperGrasper(object):
                                              "timeout for the closing action",
                                              5.0, 0.0, 30.0)
         self.closing_time = self.ddr.add_variable("closing_time",
-                                                  "Time for the closing goal",
+                                                    "Time for the closing goal",
+                                                    2.0, 0.01, 30.0)
+        self.opening_time = self.ddr.add_variable("opening_time",
+                                                  "Time for the opening goal",
                                                   2.0, 0.01, 30.0)
         self.rate = self.ddr.add_variable("rate",
                                           "Rate Hz at which the node closing will do stuff",
@@ -76,10 +79,18 @@ class GripperGrasper(object):
                                        self.grasp_cb)
         rospy.loginfo("Offering grasp service on: " + str(self.grasp_srv.resolved_name))
 
+        # Releasing service to offer
+        self.release_srv = rospy.Service('/' + self.controller_name + '_controller/release',
+                                         Empty,
+                                         self.release_cb)
+        rospy.loginfo("Offering release service on: " +
+                      str(self.release_srv.resolved_name))
+
         # Publish a boolean to know if an object is grasped or not
         self.pub_js = rospy.Publisher("{}/is_grasped".format(self.controller_name), Bool , queue_size=1)
         self.is_grasped_msg = Bool()
         self.on_optimal_close = False
+        self.on_optimal_open = False
 
         rospy.loginfo("Done initializing GripperGrasper!")
 
@@ -87,6 +98,7 @@ class GripperGrasper(object):
         self.max_position_error = config['max_position_error']
         self.timeout = config['timeout']
         self.closing_time = config['closing_time']
+        self.opening_time = config['opening_time']
         self.rate = config['rate']
         self.tolerance = config['tolerance']
         return config
@@ -114,7 +126,9 @@ class GripperGrasper(object):
         # If statement in case the service is called again after a sucessful grasp
         if not self.on_optimal_close:
             # Initial command, wait for it to do something
-            self.send_close(closing_amount)
+            rospy.loginfo("Closing: " + str(closing_amount))
+            self.send_joint_trajectory(closing_amount, self.closing_time)
+            self.on_optimal_open = False
             rospy.sleep(self.closing_time)
         r = rospy.Rate(self.rate)
         while not rospy.is_shutdown() and (rospy.Time.now() - initial_time) < rospy.Duration(self.timeout) and not self.on_optimal_close:
@@ -127,8 +141,25 @@ class GripperGrasper(object):
                 rospy.logdebug("Over error joint 1...")
                 closing_amount = self.get_optimal_close()
                 self.on_optimal_close = True
-            self.send_close(closing_amount)
+            rospy.loginfo("Closing: " + str(closing_amount))
+            self.send_joint_trajectory(closing_amount, self.closing_time)
             r.sleep()
+
+        return EmptyResponse()
+
+    def release_cb(self, req):
+        rospy.logdebug("Received release request!")
+        # From wherever we are open gripper
+
+        opening_amount = [0.044, 0.044]
+
+        # If statement in case the service is called again after a sucessful grasp
+        if self.on_optimal_open is False:
+            # Initial command, wait for it to do something
+            self.send_joint_trajectory(opening_amount, self.opening_time)
+            self.on_optimal_close = False
+            rospy.sleep(self.opening_time)
+
 
         return EmptyResponse()
 
@@ -137,13 +168,12 @@ class GripperGrasper(object):
         optimal_1 = self.last_state.actual.positions[1] - self.max_position_error
         return [optimal_0, optimal_1]
 
-    def send_close(self, closing_amount):
-        rospy.loginfo("Closing: " + str(closing_amount))
+    def send_joint_trajectory(self, joint_positions, execution_time):
         jt = JointTrajectory()
         jt.joint_names = self.real_joint_names
         p = JointTrajectoryPoint()
-        p.positions = closing_amount
-        p.time_from_start = rospy.Duration(self.closing_time)
+        p.positions = joint_positions
+        p.time_from_start = rospy.Duration(execution_time)
         jt.points.append(p)
 
         self.cmd_pub.publish(jt)
