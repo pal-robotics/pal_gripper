@@ -11,9 +11,9 @@
 
   <xacro:macro name="pal_gripper" params="name parent *origin">
 
-  <xacro:macro name="grasp_hack_parallel" params="hack_name name_prefix_left name_prefix_right parent_joint">
+  <xacro:macro name="gazebo_gripper_grasp" params="name name_prefix_left name_prefix_right parent_joint">
     <gazebo>
-      <gripper name="${hack_name}">
+      <gripper name="${name}">
         <grasp_check>
           <attach_steps>1</attach_steps>
           <detach_steps>1</detach_steps>    <!-- should be higher than 1 otherwise the object will be attached to the gripper too much time -->
@@ -175,7 +175,7 @@
   <xacro:gripper_simple_transmission name="${name}_left_finger" reduction="1.0"/>
   <xacro:gripper_simple_transmission name="${name}_right_finger" reduction="1.0"/>
 
-  <xacro:grasp_hack_parallel hack_name="${name}_grasp_hack" name_prefix_left="${name}_left_finger_link" name_prefix_right="${name}_right_finger_link" parent_joint="${parent}"/>
+  <xacro:gazebo_gripper_grasp name="${name}_grasp" name_prefix_left="${name}_left_finger_link" name_prefix_right="${name}_right_finger_link" parent_joint="${parent}"/>
 
   <xacro:finger_gazebo name="${name}_left_finger"/>
   <xacro:finger_gazebo name="${name}_right_finger"/>
