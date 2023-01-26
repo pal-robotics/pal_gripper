@@ -61,6 +61,7 @@ class GripperGrasper(object):
                 "No real joint names given in param: ~real_joint_names")
             exit(1)
 
+
         self.state_sub = rospy.Subscriber('/' + self.real_controller_name + '_controller/state',
                                           JointTrajectoryControllerState,
                                           self.state_cb,
@@ -105,7 +106,7 @@ class GripperGrasper(object):
 
     def state_cb(self, data):
         self.last_state = data
-        if self.on_optimal_close:
+        if self.on_optimal_close is True:
             self.is_grasped_msg.data = True
             if -self.last_state.error.positions[0] < self.tolerance and -self.last_state.error.positions[1] < self.tolerance:
                 self.is_grasped_msg.data = False
@@ -124,7 +125,7 @@ class GripperGrasper(object):
         initial_time = rospy.Time.now()
         closing_amount = [0.0, 0.0]
         # If statement in case the service is called again after a sucessful grasp
-        if not self.on_optimal_close:
+        if self.on_optimal_close is False:
             # Initial command, wait for it to do something
             rospy.loginfo("Closing: " + str(closing_amount))
             self.send_joint_trajectory(closing_amount, self.closing_time)
