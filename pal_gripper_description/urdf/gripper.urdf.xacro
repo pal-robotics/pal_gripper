@@ -4,7 +4,6 @@
 
   <!--File includes-->
   <xacro:include filename="$(find pal_gripper_description)/urdf/deg_to_rad.urdf.xacro" />
-  <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.transmission.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.gazebo.xacro" />
 
   <xacro:property name="gripper_eps" value="0.001" />
@@ -156,9 +155,6 @@
                izz="0.00001" />
     </inertial>
   </link>
-
-  <xacro:gripper_simple_transmission name="${name}_left_finger" reduction="1.0"/>
-  <xacro:gripper_simple_transmission name="${name}_right_finger" reduction="1.0"/>
 
   <xacro:finger_gazebo name="${name}_left_finger"/>
   <xacro:finger_gazebo name="${name}_right_finger"/>
