@@ -35,6 +35,10 @@ class GripperGrasper(object):
                                           "Rate Hz at which the node closing will do stuff",
                                           5, 1, 50)
 
+        self.tolerance = self.ddr.add_variable("tolerance",
+                                          "Tolerance of the gripper to detect that the object slipped",
+                                          0.0005, 0.0001, 0.002)
+
         self.ddr.start(self.ddr_cb)
         rospy.loginfo("Initialized dynamic reconfigure on: " + str(rospy.get_name()))
 
@@ -84,13 +88,14 @@ class GripperGrasper(object):
         self.timeout = config['timeout']
         self.closing_time = config['closing_time']
         self.rate = config['rate']
+        self.tolerance = config['tolerance']
         return config
 
     def state_cb(self, data):
         self.last_state = data
         if self.on_optimal_close:
             self.is_grasped_msg.data = True
-            if -self.last_state.error.positions[0] < 0.0005 and -self.last_state.error.positions[1] < 0.0005:
+            if -self.last_state.error.positions[0] < self.tolerance and -self.last_state.error.positions[1] < self.tolerance:
                 self.is_grasped_msg.data = False
                 self.on_optimal_close = False
         else:

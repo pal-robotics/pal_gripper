@@ -16,7 +16,7 @@
       <gripper name="${name}">
         <grasp_check>
           <attach_steps>1</attach_steps>
-          <detach_steps>1</detach_steps>    <!-- should be higher than 1 otherwise the object will be attached to the gripper too much time -->
+          <detach_steps>1</detach_steps>    <!-- should not be higher than 1 otherwise the object will be attached to the gripper too much time -->
           <min_contact_count>3</min_contact_count>
         </grasp_check>
         <gripper_link>${name_prefix_left}</gripper_link>
@@ -175,6 +175,7 @@
   <xacro:gripper_simple_transmission name="${name}_left_finger" reduction="1.0"/>
   <xacro:gripper_simple_transmission name="${name}_right_finger" reduction="1.0"/>
 
+  <!--This xacro is used to be able to grasp object in simulmation more robustly, it could cause segfault at grasping time -->
   <xacro:gazebo_gripper_grasp name="${name}_grasp" name_prefix_left="${name}_left_finger_link" name_prefix_right="${name}_right_finger_link" parent_joint="${parent}"/>
 
   <xacro:finger_gazebo name="${name}_left_finger"/>
