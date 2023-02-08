@@ -171,6 +171,36 @@
                izz="0.00001" />
     </inertial>
   </link>
+  <!-- Grasping frame Y -->
+  <joint name="${name}_grasping_frame_Y_joint" type="fixed">
+    <parent link="${name}_link" />
+    <child link="${name}_grasping_frame_Y" />
+    <origin xyz="0 0 -0.12" rpy="-1.5708 0 1.5708" />
+  </joint>
+  <link name="${name}_grasping_frame_Y">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0"
+               izz="0.00001" />
+    </inertial>
+  </link>
+  <!-- Grasping frame Z -->
+  <joint name="${name}_grasping_frame_Z_joint" type="fixed">
+    <parent link="${name}_link" />
+    <child link="${name}_grasping_frame_Z" />
+    <origin xyz="0 0 -0.12" rpy="3.1416 0 1.5708" />
+  </joint>
+  <link name="${name}_grasping_frame_Z">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0001" />
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0"
+               izz="0.00001" />
+    </inertial>
+  </link>
 
   <xacro:gripper_simple_transmission name="${name}_left_finger" reduction="1.0"/>
   <xacro:gripper_simple_transmission name="${name}_right_finger" reduction="1.0"/>
