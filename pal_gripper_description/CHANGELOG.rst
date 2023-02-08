@@ -2,6 +2,14 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'update_transmissions' into 'humble-devel'
+  ros2 update transmissions for pal-gripper
+  See merge request robots/pal_gripper!22
+* ros2 update transmissions for pal-gripper
+* Contributors: Jordan Palacios, Noel Jimenez
+
 3.0.1 (2022-12-15)
 ------------------
 
