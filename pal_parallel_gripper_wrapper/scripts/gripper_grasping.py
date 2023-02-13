@@ -29,10 +29,7 @@ class GripperGrasper(object):
                                              "timeout for the closing action",
                                              5.0, 0.0, 30.0)
         self.closing_time = self.ddr.add_variable("closing_time",
-                                                    "Time for the closing goal",
-                                                    2.0, 0.01, 30.0)
-        self.opening_time = self.ddr.add_variable("opening_time",
-                                                  "Time for the opening goal",
+                                                  "Time for the closing goal",
                                                   2.0, 0.01, 30.0)
         self.rate = self.ddr.add_variable("rate",
                                           "Rate Hz at which the node closing will do stuff",
@@ -44,6 +41,9 @@ class GripperGrasper(object):
 
         self.ddr.start(self.ddr_cb)
         rospy.loginfo("Initialized dynamic reconfigure on: " + str(rospy.get_name()))
+
+        # Set time to open gripper
+        self.opening_time = 0.2
 
         # Subscriber to the gripper state
         self.last_state = None
@@ -98,7 +98,6 @@ class GripperGrasper(object):
         self.max_position_error = config['max_position_error']
         self.timeout = config['timeout']
         self.closing_time = config['closing_time']
-        self.opening_time = config['opening_time']
         self.rate = config['rate']
         self.tolerance = config['tolerance']
         return config
