@@ -187,7 +187,7 @@ class WrappedFJTA(object):
         st.desired.time_from_start = ref_state.desired.time_from_start
 
         st.actual.positions.extend(
-            [p * 2.0for p in ref_state.actual.positions[:1]])
+            [p * 2.0 for p in ref_state.actual.positions[:1]])
         st.actual.velocities.extend(ref_state.actual.velocities[:1])
         st.actual.accelerations.extend(ref_state.actual.accelerations[:1])
         st.actual.effort.extend(ref_state.actual.effort[:1])

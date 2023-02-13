@@ -11,6 +11,21 @@
 
   <xacro:macro name="pal_gripper" params="name parent *origin">
 
+  <xacro:macro name="gazebo_gripper_grasp" params="name name_prefix_left name_prefix_right parent_joint">
+    <gazebo>
+      <gripper name="${name}">
+        <grasp_check>
+          <attach_steps>1</attach_steps>
+          <detach_steps>1</detach_steps>    <!-- should not be higher than 1 otherwise the object will be attached to the gripper too much time -->
+          <min_contact_count>3</min_contact_count>
+        </grasp_check>
+        <gripper_link>${name_prefix_left}</gripper_link>
+        <gripper_link>${name_prefix_right}</gripper_link>
+        <palm_link>${parent_joint}</palm_link>
+      </gripper>
+    </gazebo>
+  </xacro:macro>
+
   <link name="${name}_tool_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -92,9 +107,9 @@
     <parent link="${name}_link" />
     <child link="${name}_right_finger_link" />
     <axis xyz="1 0 0" />
-    <limit effort="16" lower="0.0" upper="0.045" velocity="0.05" />
+    <limit effort="64" lower="0.0" upper="0.045" velocity="0.05" />
     <calibration rising="0.0" />
-    <dynamics damping="80" />
+    <dynamics damping="1" />
     <safety_controller k_position="20"
                        k_velocity="20"
                        soft_lower_limit="${0.0 + gripper_eps}"
@@ -132,9 +147,9 @@
     <parent link="${name}_link" />
     <child link="${name}_left_finger_link" />
     <axis xyz="-1 0 0" />
-    <limit effort="16" lower="0" upper="0.045" velocity="0.05" />
+    <limit effort="64" lower="0" upper="0.045" velocity="0.05" />
     <calibration rising="0.0" />
-    <dynamics damping="80" />
+    <dynamics damping="1" />
     <safety_controller k_position="20"
                        k_velocity="20"
                        soft_lower_limit="${0.0 + gripper_eps}"
@@ -159,6 +174,9 @@
 
   <xacro:gripper_simple_transmission name="${name}_left_finger" reduction="1.0"/>
   <xacro:gripper_simple_transmission name="${name}_right_finger" reduction="1.0"/>
+
+  <!--This xacro is used to be able to grasp object in simulmation more robustly, it could cause segfault at grasping time -->
+  <xacro:gazebo_gripper_grasp name="${name}_grasp" name_prefix_left="${name}_left_finger_link" name_prefix_right="${name}_right_finger_link" parent_joint="${parent}"/>
 
   <xacro:finger_gazebo name="${name}_left_finger"/>
   <xacro:finger_gazebo name="${name}_right_finger"/>
