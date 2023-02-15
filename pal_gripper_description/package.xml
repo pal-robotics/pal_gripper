@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pal_gripper_description</name>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
   <description>The pal_gripper_description package</description>
 
   <author email="sam.pfeiffer@pal-robotics.com">Sam Pfeiffer</author>

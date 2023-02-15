@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.7 (2023-02-15)
+------------------
 * Merge branch 'add_is_grasped' into 'erbium-devel'
   Add is_grasped topic working in simulation and on the real robot
   See merge request robots/pal_gripper!19
