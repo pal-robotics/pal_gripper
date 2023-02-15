@@ -2,6 +2,17 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add_is_grasped' into 'erbium-devel'
+  Add is_grasped topic working in simulation and on the real robot
+  See merge request robots/pal_gripper!19
+* Add tolerance parameter for the pal gripper + comments
+* Apply Sai suggestion for naming and syntax
+* Add grasp_hack + tuning
+* Improve grasping in simulation and on real robot + change is_grasped topic name
+* Contributors: saikishor, thomaspeyrucain
+
 1.0.6 (2022-09-23)
 ------------------
 

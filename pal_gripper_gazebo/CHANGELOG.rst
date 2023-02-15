@@ -2,6 +2,9 @@
 Changelog for package pal_gripper_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.6 (2022-09-23)
 ------------------
 

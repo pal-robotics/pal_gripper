@@ -2,6 +2,25 @@
 Changelog for package pal_parallel_gripper_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add_is_grasped' into 'erbium-devel'
+  Add is_grasped topic working in simulation and on the real robot
+  See merge request robots/pal_gripper!19
+* Merge branch 'release-service' into 'add_is_grasped'
+  Release service
+  See merge request robots/pal_gripper!21
+* Remove opening time parameter and add arguments to launch file
+* Update if statemens with python syntax, remove uneccesary white lines
+* Fix changes
+* add service to release
+* fix typo and add tolerance to launch file
+* Add tolerance parameter for the pal gripper + comments
+* Apply Sai suggestion for naming and syntax
+* Improve grasping in simulation and on real robot + change is_grasped topic name
+* Add is_grasped topic working in simulation and on the real robot
+* Contributors: David ter Kuile, saikishor, thomaspeyrucain
+
 1.0.6 (2022-09-23)
 ------------------
 
