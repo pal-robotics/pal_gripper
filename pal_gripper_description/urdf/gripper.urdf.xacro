@@ -6,6 +6,7 @@
   <xacro:include filename="$(find pal_gripper_description)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.transmission.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.gazebo.xacro" />
+  <xacro:include filename="$(find tiago_description)/urdf/end_effector/grasping_frames.xacro" />
 
   <xacro:property name="gripper_eps" value="0.001" />
 
@@ -163,51 +164,7 @@
                        soft_upper_limit="${0.045 - gripper_eps}" />
   </joint>
 
-  <!-- Grasping frame -->
-  <joint name="${name}_grasping_frame_joint" type="fixed">
-    <parent link="${name}_link" />
-    <child link="${name}_grasping_frame" />
-    <origin xyz="0 0 -0.12" rpy="-1.5708 1.5708 0" />
-  </joint>
-  <link name="${name}_grasping_frame">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.0001" />
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-               iyy="0.00001" iyz="0.0"
-               izz="0.00001" />
-    </inertial>
-  </link>
-  <!-- Grasping frame Y -->
-  <joint name="${name}_grasping_frame_Y_joint" type="fixed">
-    <parent link="${name}_link" />
-    <child link="${name}_grasping_frame_Y" />
-    <origin xyz="0 0 -0.12" rpy="-1.5708 0 1.5708" />
-  </joint>
-  <link name="${name}_grasping_frame_Y">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.0001" />
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-               iyy="0.00001" iyz="0.0"
-               izz="0.00001" />
-    </inertial>
-  </link>
-  <!-- Grasping frame Z -->
-  <joint name="${name}_grasping_frame_Z_joint" type="fixed">
-    <parent link="${name}_link" />
-    <child link="${name}_grasping_frame_Z" />
-    <origin xyz="0 0 -0.12" rpy="3.1416 0 1.5708" />
-  </joint>
-  <link name="${name}_grasping_frame_Z">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.0001" />
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-               iyy="0.00001" iyz="0.0"
-               izz="0.00001" />
-    </inertial>
-  </link>
+  <xacro:pal_robotiq_grasping_frames prefix="${name}_" xyz="0 0 0.12"/>
 
   <xacro:gripper_simple_transmission name="${name}_left_finger" reduction="1.0"/>
   <xacro:gripper_simple_transmission name="${name}_right_finger" reduction="1.0"/>
