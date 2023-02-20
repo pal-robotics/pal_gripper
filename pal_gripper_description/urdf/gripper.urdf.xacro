@@ -76,6 +76,13 @@
     <axis xyz="0 0 0" />
   </joint>
 
+  <link name="${name}_base_link"/>
+  <joint name="${name}_base_joint" type="fixed">
+    <origin rpy="0 3.1416 1.5707" xyz="0. 0 0" />
+    <parent link="${name}_link" />
+    <child link="${name}_base_link" />
+  </joint>
+
   <link name="${name}_right_finger_link">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.004470 0.010766 -0.121013" />
