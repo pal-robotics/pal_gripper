@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.3 (2023-03-01)
+------------------
 * Merge branch 'rm_use_sim_time' into 'humble-devel'
   Remove unecessary use_sim_time
   See merge request robots/pal_gripper!23
