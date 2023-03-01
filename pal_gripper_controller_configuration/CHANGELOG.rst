@@ -2,6 +2,18 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'rm_use_sim_time' into 'humble-devel'
+  Remove unecessary use_sim_time
+  See merge request robots/pal_gripper!23
+* rm unnecessary use_sim_time
+* Merge branch 'fix_controllers_config' into 'humble-devel'
+  Remove initial / from controllers config
+  See merge request robots/pal_gripper!25
+* remove initial / from controllers config
+* Contributors: Jordan Palacios, Noel Jimenez
+
 3.0.2 (2023-02-08)
 ------------------
 
