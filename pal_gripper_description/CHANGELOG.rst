@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.8 (2023-03-23)
+------------------
 * Merge branch 'new-grasping-frames' into 'erbium-devel'
   New grasping frames
   See merge request robots/pal_gripper!24
