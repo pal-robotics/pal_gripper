@@ -2,6 +2,16 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'new-grasping-frames' into 'erbium-devel'
+  New grasping frames
+  See merge request robots/pal_gripper!24
+* Replaced links by grasping frame macro
+* Added gripper base link
+* Added grasping frame Z and Y
+* Contributors: narcismiguel, sergiacosta
+
 1.0.7 (2023-02-15)
 ------------------
 * Merge branch 'add_is_grasped' into 'erbium-devel'
