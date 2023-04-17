@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* rename motors to actuators
+* Contributors: Noel Jimenez
+
 3.0.3 (2023-03-01)
 ------------------
 
