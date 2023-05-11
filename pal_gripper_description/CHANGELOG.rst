@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.9 (2023-05-11)
+------------------
 * Merge branch 'add-grasping-frames-raw' into 'erbium-devel'
   Add grasping frames raw
   See merge request robots/pal_gripper!27
