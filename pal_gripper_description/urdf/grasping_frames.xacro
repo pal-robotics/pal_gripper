@@ -16,7 +16,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--
-    Utiliy to create a tiago grasping frame in the end effector.
+    Utility to create a grasping frame in the end effector.
 
     Parameters:
       frame: custom name for the frame
