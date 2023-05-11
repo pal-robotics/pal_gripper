@@ -2,6 +2,16 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-grasping-frames-raw' into 'erbium-devel'
+  Add grasping frames raw
+  See merge request robots/pal_gripper!27
+* Fix the typos
+* Modified grasping frames xacro file path
+* Added grasping frames xacro file
+* Contributors: Sai Kishor Kothakota, sergiacosta
+
 1.0.8 (2023-03-23)
 ------------------
 * Merge branch 'new-grasping-frames' into 'erbium-devel'
