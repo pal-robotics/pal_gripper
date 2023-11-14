@@ -5,6 +5,9 @@
   <description>Controllers configuration for PAL gripper in Gazebo</description>
   <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <license>Proprietary</license>
+
+  <url type="website">https://github.com/pal-robotics/tiago_simulation</url>
+
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>rospy</run_depend>
   <run_depend>control_msgs</run_depend>
