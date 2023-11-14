@@ -2,6 +2,11 @@
 Changelog for package pal_gripper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add website tag
+* Contributors: Noel Jimenez
+
 3.0.4 (2023-04-17)
 ------------------
 
