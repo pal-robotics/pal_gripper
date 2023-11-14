@@ -7,8 +7,9 @@
   <author email="sam.pfeiffer@pal-robotics.com">Sam Pfeiffer</author>
   <maintainer email="tiago-support@pal-robotics.com">TIAGo support team</maintainer>
 
-
   <license>BSD</license>
+
+  <url type="website">https://github.com/pal-robotics/tiago_simulation</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>pal_hardware_gazebo</run_depend>
