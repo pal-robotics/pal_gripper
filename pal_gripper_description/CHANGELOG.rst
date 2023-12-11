@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Use pal_urdf_utils for common files
+* Contributors: David ter Kuile
+
 3.0.5 (2023-11-14)
 ------------------
 * Add website tag
