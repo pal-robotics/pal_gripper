@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* adding the pal_gripper_controller launcher
+* Contributors: Aina Irisarri
+
 3.0.6 (2023-12-11)
 ------------------
 * Add left and right controller

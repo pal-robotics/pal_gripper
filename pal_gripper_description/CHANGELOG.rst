@@ -2,6 +2,9 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 3.0.6 (2023-12-11)
 ------------------
 * Use pal_urdf_utils for common files
