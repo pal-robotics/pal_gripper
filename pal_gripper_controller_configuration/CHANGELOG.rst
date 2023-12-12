@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.7 (2023-12-12)
+------------------
 * adding the pal_gripper_controller launcher
 * Contributors: Aina Irisarri
 
