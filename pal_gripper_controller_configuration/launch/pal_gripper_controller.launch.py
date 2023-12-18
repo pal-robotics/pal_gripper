@@ -16,12 +16,65 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 from controller_manager.launch_utils import generate_load_controller_launch_description
+from launch_pal.param_utils import parse_parametric_yaml
+from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
+from launch.actions import DeclareLaunchArgument, SetLaunchConfiguration, OpaqueFunction
+from launch.substitutions import LaunchConfiguration
+from launch import LaunchDescription, LaunchContext
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class LaunchArguments(LaunchArgumentsBase):
+
+    side: DeclareLaunchArgument = DeclareLaunchArgument(
+        name='side',
+        default_value='left',
+        choices=['', 'left', 'right'],
+        description='side of the gripper')
+
+
+def declare_actions(launch_description: LaunchDescription, launch_args: LaunchArguments):
+
+    launch_description.add_action(OpaqueFunction(function=setup_controller_configuration))
+
+    launch_controller = generate_load_controller_launch_description(
+        controller_name=LaunchConfiguration("controller_name"),
+        controller_type='joint_trajectory_controller/JointTrajectoryController',
+        controller_params_file=LaunchConfiguration("controller_config"))
+
+    launch_description.add_action(launch_controller)
+
+    return
+
+
+def setup_controller_configuration(context: LaunchContext):
+
+    side = read_launch_argument('side', context)
+    gripper_suffix = "gripper"
+    if side:
+        gripper_suffix = f"gripper_{side}"
+
+    controller_name = f"{gripper_suffix}_controller"
+    remappings = {"GRIPPER_SUFFIX": gripper_suffix}
+    param_file = os.path.join(
+        get_package_share_directory('pal_gripper_controller_configuration'),
+        'config', 'gripper_controller.yaml')
+
+    parsed_yaml = parse_parametric_yaml(source_files=[param_file], param_rewrites=remappings)
+
+    return [SetLaunchConfiguration('controller_name', controller_name),
+            SetLaunchConfiguration('controller_config', parsed_yaml)]
 
 
 def generate_launch_description():
-    return generate_load_controller_launch_description(
-        controller_name='gripper_controller',
-        controller_type='joint_trajectory_controller/JointTrajectoryController',
-        controller_params_file=os.path.join(
-            get_package_share_directory('pal_gripper_controller_configuration'),
-            'config', 'gripper_controller.yaml'))
+
+    # Create the launch description and populate
+    ld = LaunchDescription()
+    launch_arguments = LaunchArguments()
+
+    launch_arguments.add_to_launch_description(ld)
+
+    declare_actions(ld, launch_arguments)
+
+    return ld
