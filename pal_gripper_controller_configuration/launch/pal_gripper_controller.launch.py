@@ -29,7 +29,7 @@ class LaunchArguments(LaunchArgumentsBase):
 
     side: DeclareLaunchArgument = DeclareLaunchArgument(
         name='side',
-        default_value='left',
+        default_value='',
         choices=['', 'left', 'right'],
         description='side of the gripper')
 
