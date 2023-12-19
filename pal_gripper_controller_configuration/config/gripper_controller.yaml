@@ -1,9 +1,9 @@
-${GRIPPER_SUFFIX}_controller:
+${EE_SUFFIX}_controller:
   ros__parameters:
     type: joint_trajectory_controller/JointTrajectoryController
     joints:
-      - ${GRIPPER_SUFFIX}_right_finger_joint
-      - ${GRIPPER_SUFFIX}_left_finger_joint
+      - ${EE_SUFFIX}_right_finger_joint
+      - ${EE_SUFFIX}_left_finger_joint
     command_interfaces:
       - position
     state_interfaces:
@@ -12,7 +12,7 @@ ${GRIPPER_SUFFIX}_controller:
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 5.0
-      ${GRIPPER_SUFFIX}_right_finger_joint:
+      ${EE_SUFFIX}_right_finger_joint:
         goal: 0.02
-      ${GRIPPER_SUFFIX}_left_finger_joint:
+      ${EE_SUFFIX}_left_finger_joint:
         goal: 0.02
