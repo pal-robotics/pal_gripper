@@ -1,9 +1,9 @@
-gripper_controller:
+${EE_SIDE_PREFIX}_controller:
   ros__parameters:
     type: joint_trajectory_controller/JointTrajectoryController
     joints:
-      - gripper_right_finger_joint
-      - gripper_left_finger_joint
+      - ${EE_SIDE_PREFIX}_right_finger_joint
+      - ${EE_SIDE_PREFIX}_left_finger_joint
     command_interfaces:
       - position
     state_interfaces:
@@ -12,7 +12,7 @@ gripper_controller:
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 5.0
-      gripper_right_finger_joint:
+      ${EE_SIDE_PREFIX}_right_finger_joint:
         goal: 0.02
-      gripper_left_finger_joint:
+      ${EE_SIDE_PREFIX}_left_finger_joint:
         goal: 0.02
