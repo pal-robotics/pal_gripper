@@ -2,6 +2,14 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tiago-dual' into 'humble-devel'
+  Adapted pal_gripper_controller_configuration to ros2
+  See merge request robots/pal_gripper!32
+* CMake version to 3.8
+* Contributors: David ter Kuile, davidterkuile
+
 3.0.7 (2023-12-12)
 ------------------
 

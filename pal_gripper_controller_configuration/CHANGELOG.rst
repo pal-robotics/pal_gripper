@@ -2,6 +2,18 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tiago-dual' into 'humble-devel'
+  Adapted pal_gripper_controller_configuration to ros2
+  See merge request robots/pal_gripper!32
+* CMake version to 3.8
+* Update variable name of gripper_prefix
+* Change to ee_suffix
+* Default side argument set to empty
+* combine gripper controller params in single file with parametrization
+* Contributors: David ter Kuile, davidterkuile
+
 3.0.7 (2023-12-12)
 ------------------
 * adding the pal_gripper_controller launcher
