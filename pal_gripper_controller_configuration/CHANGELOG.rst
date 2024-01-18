@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.1.0 (2024-01-18)
+------------------
 * Merge branch 'tiago-dual' into 'humble-devel'
   Adapted pal_gripper_controller_configuration to ros2
   See merge request robots/pal_gripper!32
