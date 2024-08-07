@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Use controller_type from the controllers config
+* Contributors: Noel Jimenez
+
 3.2.0 (2024-06-18)
 ------------------
 * aadd broadcaster controller & the gazebo configuration
