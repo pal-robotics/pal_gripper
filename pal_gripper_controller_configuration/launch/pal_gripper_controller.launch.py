@@ -40,7 +40,6 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
     launch_controller = generate_load_controller_launch_description(
         controller_name=LaunchConfiguration("controller_name"),
-        controller_type='joint_trajectory_controller/JointTrajectoryController',
         controller_params_file=LaunchConfiguration("controller_config"))
 
     launch_description.add_action(launch_controller)

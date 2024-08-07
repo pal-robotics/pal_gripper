@@ -22,7 +22,6 @@ from controller_manager.launch_utils import generate_load_controller_launch_desc
 def generate_launch_description():
     return generate_load_controller_launch_description(
         controller_name='joint_state_broadcaster',
-        controller_type='joint_state_broadcaster/JointStateBroadcaster',
         controller_params_file=os.path.join(
             get_package_share_directory('pal_gripper_controller_configuration'),
             'config', 'joint_state_broadcaster.yaml'))
