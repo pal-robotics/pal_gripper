@@ -10,15 +10,7 @@
 
   <xacro:macro name="pal_gripper" params="name parent *origin">
 
-  <link name="${name}_tool_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.0001" />
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-               iyy="0.00001" iyz="0.0"
-               izz="0.00001" />
-    </inertial>
-  </link>
+  <link name="${name}_tool_link"/>
 
   <joint name="${name}_tool_joint" type="fixed">
     <xacro:insert_block name="origin"/>
@@ -62,11 +54,11 @@
 
   <link name="${name}_right_finger_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.004470 0.010766 -0.121013" />
-      <mass value="0.109980" />
-      <inertia ixx="0.000232" ixy="-0.000005" ixz="-0.000032"
-               iyy="0.000224" iyz="0.000036"
-               izz="0.000029" />
+      <origin rpy="0 0 0" xyz="0.008658 0.019724 -0.149125" />
+      <mass value="0.107001" />
+      <inertia ixx="0.000242" ixy="0.0" ixz="0.0"
+               iyy="0.000236" iyz="0.0"
+               izz="0.000018" />
     </inertial>
     <visual>
       <origin rpy="0 0 3.1415" xyz="0 0 0" />
@@ -87,7 +79,7 @@
   </gazebo>
 
   <joint name="${name}_right_finger_joint" type="prismatic">
-    <origin rpy="0 0 0" xyz="0. 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.01" />
     <parent link="${name}_link" />
     <child link="${name}_right_finger_link" />
     <axis xyz="1 0 0" />
@@ -102,11 +94,11 @@
 
   <link name="${name}_left_finger_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.004470 0.010766 -0.121013" />
-      <mass value="0.109980" />
-      <inertia ixx="0.000232" ixy="-0.000005" ixz="-0.000032"
-               iyy="0.000224" iyz="0.000036"
-               izz="0.000029" />
+      <origin rpy="0 0 0" xyz="-0.008658 -0.019724 -0.149125" />
+      <mass value="0.107001" />
+      <inertia ixx="0.000242" ixy="0.0" ixz="0.0"
+               iyy="0.000236" iyz="0.0"
+               izz="0.000018" />
     </inertial>
     <visual>
       <origin rpy="0 0 3.1415" xyz="0 0 0"/>
@@ -127,7 +119,7 @@
   </gazebo>
 
   <joint name="${name}_left_finger_joint" type="prismatic">
-    <origin rpy="0 0 0" xyz="0. 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.01" />
     <parent link="${name}_link" />
     <child link="${name}_left_finger_link" />
     <axis xyz="-1 0 0" />
@@ -144,17 +136,9 @@
   <joint name="${name}_grasping_frame_joint" type="fixed">
     <parent link="${name}_link" />
     <child link="${name}_grasping_frame" />
-    <origin xyz="0 0 -0.12" rpy="-1.5708 1.5708 0" />
+    <origin xyz="0 0 -0.13" rpy="-1.5708 1.5708 0" />
   </joint>
-  <link name="${name}_grasping_frame">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.0001" />
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
-               iyy="0.00001" iyz="0.0"
-               izz="0.00001" />
-    </inertial>
-  </link>
+  <link name="${name}_grasping_frame"/>
 
   <xacro:finger_gazebo name="${name}_left_finger"/>
   <xacro:finger_gazebo name="${name}_right_finger"/>
