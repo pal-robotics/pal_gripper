@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>pal_gripper_simulation</name>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
   <description>Pal gripper simulation package</description>
   <maintainer email="aina.irisarri@pal-robotics.com">Aina Irisarri</maintainer>
   <license>Apache License 2.0</license>

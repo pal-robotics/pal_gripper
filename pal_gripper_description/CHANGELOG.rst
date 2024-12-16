@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.5.0 (2024-12-16)
+------------------
 * Fix inertia + update interface link to match the real interface of the gripper
 * Contributors: thomas.peyrucain
 
