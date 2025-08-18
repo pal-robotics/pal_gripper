@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.5.1 (2025-08-18)
+------------------
 * Merge branch 'tpe/fix_collision' into 'humble-devel'
   Align collision with real model
   See merge request robots/pal_gripper!38
