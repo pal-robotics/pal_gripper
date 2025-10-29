@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.6.0 (2025-10-29)
+------------------
 * Merge branch 'tpe/add_open_loop' into 'humble-devel'
   Add openloop to controllers
   See merge request robots/pal_gripper!40
