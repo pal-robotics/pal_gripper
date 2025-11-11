@@ -79,7 +79,7 @@
   </gazebo>
 
   <joint name="${name}_right_finger_joint" type="prismatic">
-    <origin rpy="0 0 0" xyz="0 0 0.01" />
+    <origin rpy="0 0 0" xyz="0 0 -0.01" />
     <parent link="${name}_link" />
     <child link="${name}_right_finger_link" />
     <axis xyz="1 0 0" />
@@ -119,7 +119,7 @@
   </gazebo>
 
   <joint name="${name}_left_finger_joint" type="prismatic">
-    <origin rpy="0 0 0" xyz="0 0 0.01" />
+    <origin rpy="0 0 0" xyz="0 0 -0.01" />
     <parent link="${name}_link" />
     <child link="${name}_left_finger_link" />
     <axis xyz="-1 0 0" />
