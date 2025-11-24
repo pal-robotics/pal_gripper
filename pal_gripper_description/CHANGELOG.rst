@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.5.2 (2025-11-24)
+------------------
 * Fix finger position
   (cherry picked from commit cec248dbd3c7d6dfbe1724f64056f555856ca59e)
 * Contributors: thomas.peyrucain
