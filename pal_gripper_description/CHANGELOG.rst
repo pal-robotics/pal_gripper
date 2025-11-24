@@ -2,6 +2,12 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix finger position
+  (cherry picked from commit cec248dbd3c7d6dfbe1724f64056f555856ca59e)
+* Contributors: thomas.peyrucain
+
 3.5.1 (2025-08-18)
 ------------------
 * Merge branch 'tpe/fix_collision' into 'humble-devel'
