@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change the way of finding packages for meshes
+* Contributors: Noel Jimenez
+
 3.6.1 (2025-11-11)
 ------------------
 * Fix finger position
