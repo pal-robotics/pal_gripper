@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.6.2 (2026-01-08)
+------------------
 * Change the way of finding packages for meshes
 * Contributors: Noel Jimenez
 
