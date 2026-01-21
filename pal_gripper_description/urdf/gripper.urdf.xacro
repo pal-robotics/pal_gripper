@@ -8,7 +8,7 @@
 
   <xacro:property name="gripper_eps" value="0.001" />
 
-  <xacro:macro name="pal_gripper" params="name parent *origin">
+  <xacro:macro name="pal_gripper" params="name parent *origin calibration_tool:=False">
 
   <link name="${name}_tool_link"/>
 
@@ -142,13 +142,62 @@
   </joint>
 
   <!-- Grasping frame -->
-  <joint name="${name}_grasping_frame_joint" type="fixed">
-    <parent link="${name}_link" />
-    <child link="${name}_grasping_frame" />
-    <origin xyz="0 0 -0.13" rpy="-1.5708 1.5708 0" />
-  </joint>
-  <link name="${name}_grasping_frame"/>
+  <xacro:if value="${calibration_tool}">
+    <joint name="${name}_grasping_frame_joint" type="fixed">
+      <parent link="${name}_link" />
+      <child link="${name}_grasping_frame" />
+      <origin xyz="0 0 -0.13" rpy="-1.5708 1.5708 0" />
+    </joint>
 
+    <link name="${name}_grasping_frame">
+      <inertial>
+        <mass value="0.1" />
+        <origin xyz="0.21 0 0.0" rpy="0 0 0" />
+        <inertia ixx="0.000341" ixy="0" ixz="0" iyy="0.000241" iyz="0" izz="0.000101" />
+      </inertial>
+    
+      <visual>
+        <origin xyz="0.21 0 0.0" rpy="0 0 1.5708" />
+        <geometry>
+          <box size="0.01 0.21 0.21" />
+        </geometry>
+        <material name="grasp_box_color">
+          <color rgba="0 0 1 1" />
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0.21 0 0.0" rpy="0 0 1.5708" />
+        <geometry>
+          <box size="0.01 0.21 0.21" />
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="${name}_grasping_frame">
+      <material>Gazebo/Blue</material>
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+      
+    </xacro:if>
+
+    <xacro:unless value="${calibration_tool}">
+      <joint name="${name}_grasping_frame_joint" type="fixed">
+        <parent link="${name}_link"/>
+        <child link="${name}_grasping_frame"/>
+        <origin xyz="0 0 -0.13" rpy="-1.5708 1.5708 0" />
+      </joint>
+      
+      <link name="${name}_grasping_frame">
+        <inertial>
+        <mass value="0.1" />
+        <origin xyz="0.21 0 0.0" rpy="0 0 0" />
+        <inertia ixx="0.000341" ixy="0" ixz="0" iyy="0.000241" iyz="0" izz="0.000101" />
+        </inertial>
+      </link>
+      
+    </xacro:unless>
+   
   <xacro:finger_gazebo name="${name}_left_finger"/>
   <xacro:finger_gazebo name="${name}_right_finger"/>
 
