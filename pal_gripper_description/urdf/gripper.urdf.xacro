@@ -78,12 +78,21 @@
     <material>Gazebo/Black</material>
   </gazebo>
 
+  <!-- TODO: set lower limit back to 0 when moving to Gazebo Harmonic or ROS 2 Jazzy -->
+  <!-- See https://github.com/gazebosim/gz-sim/issues/1684 for more information -->
+  <xacro:if value="${gazebo_version == 'classic'}">
+    <xacro:property name="gripper_lower_limit" value="0.0"/>
+  </xacro:if>
+  <xacro:if value="${gazebo_version == 'gazebo'}">
+    <xacro:property name="gripper_lower_limit" value="-1e-3"/>
+  </xacro:if>
+
   <joint name="${name}_right_finger_joint" type="prismatic">
     <origin rpy="0 0 0" xyz="0 0 -0.01" />
     <parent link="${name}_link" />
     <child link="${name}_right_finger_link" />
     <axis xyz="1 0 0" />
-    <limit effort="16" lower="0.0" upper="0.045" velocity="0.05" />
+    <limit effort="16" lower="${gripper_lower_limit}" upper="0.045" velocity="0.05" />
     <calibration rising="0.0" />
     <dynamics damping="80" friction="2.0"/>
     <safety_controller k_position="20"
@@ -123,7 +132,7 @@
     <parent link="${name}_link" />
     <child link="${name}_left_finger_link" />
     <axis xyz="-1 0 0" />
-    <limit effort="16" lower="0" upper="0.045" velocity="0.05" />
+    <limit effort="16" lower="${gripper_lower_limit}" upper="0.045" velocity="0.05" />
     <calibration rising="0.0" />
     <dynamics damping="80" friction="2.0"/>
     <safety_controller k_position="20"
