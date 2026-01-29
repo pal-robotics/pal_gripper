@@ -2,6 +2,13 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Use package instead of find for meshes lookup
+  This change avoids errors when visualizing the robot in rviz2 from a
+  remote host instead of directly inside the robot
+* Contributors: Noel Jimenez
+
 3.6.2 (2026-01-08)
 ------------------
 * Change the way of finding packages for meshes
