@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for new gazebo
+* Contributors: thomaspeyrucain
+
 3.6.3 (2026-01-29)
 ------------------
 * Use package instead of find for meshes lookup
