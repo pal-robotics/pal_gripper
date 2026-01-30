@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.6.4 (2026-01-30)
+------------------
 * Add support for new gazebo
 * Contributors: thomaspeyrucain
 
