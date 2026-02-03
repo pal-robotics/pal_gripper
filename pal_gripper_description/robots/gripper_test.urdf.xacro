@@ -35,7 +35,7 @@ limitations under the License.
   <!--Spawn gripper-->
   <link name="base_link"/>
 
-  <xacro:pal_gripper parent="base_link" name="gripper">
+  <xacro:pal_gripper parent="base_link" name="gripper" gazebo_version="$(arg gazebo_version)">
     <origin xyz="0 0 0" rpy="${0 * deg_to_rad} ${-180 * deg_to_rad} 0" />
   </xacro:pal_gripper>
 

@@ -8,7 +8,7 @@
 
   <xacro:property name="gripper_eps" value="0.001" />
 
-  <xacro:macro name="pal_gripper" params="name parent *origin">
+  <xacro:macro name="pal_gripper" params="name parent gazebo_version *origin">
 
   <link name="${name}_tool_link"/>
 
