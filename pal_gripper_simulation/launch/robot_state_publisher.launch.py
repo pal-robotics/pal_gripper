@@ -21,8 +21,8 @@ from launch_pal.arg_utils import LaunchArgumentsBase
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 from launch import LaunchDescription
-from launch_pal.arg_utils import read_launch_argument, CommonArgs
-
+from launch_pal.arg_utils import read_launch_argument
+from launch_pal.robot_arguments.common import CommonArgs
 
 from pathlib import Path
 from launch_param_builder import load_xacro
@@ -33,6 +33,7 @@ from launch_ros.actions import Node
 class LaunchArguments(LaunchArgumentsBase):
 
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
 
 def launch_setup(context, *args, **kwargs):
@@ -41,7 +42,8 @@ def launch_setup(context, *args, **kwargs):
         Path(os.path.join(
             get_package_share_directory('pal_gripper_description'), 'robots',
             'gripper_test.urdf.xacro')),
-        {'use_sim_time': read_launch_argument('use_sim_time', context)}
+        {'use_sim_time': read_launch_argument('use_sim_time', context),
+         'gazebo_version': read_launch_argument('gazebo_version', context)}
     )}
 
     rsp = Node(package='robot_state_publisher',

@@ -24,6 +24,7 @@ from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
 from launch_pal.include_utils import include_scoped_launch_py_description
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_launch_py_description
+from launch_pal.robot_arguments import CommonArgs
 
 
 @dataclass(frozen=True)
@@ -32,6 +33,8 @@ class LaunchArguments(LaunchArgumentsBase):
         name='use_sim_time',
         default_value='True',
         description='Use simulation time')
+
+    gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
 
 def get_model_paths(packages_names):
@@ -54,7 +57,8 @@ def declare_actions(ld: LaunchDescription, launch_args: LaunchArguments):
         pkg_name='pal_gripper_simulation',
         paths=['launch', 'robot_state_publisher.launch.py'],
         launch_arguments={
-            "use_sim_time": launch_args.use_sim_time
+            "use_sim_time": launch_args.use_sim_time,
+            "gazebo_version": launch_args.gazebo_version
         })
 
     spawn_model = include_launch_py_description(
