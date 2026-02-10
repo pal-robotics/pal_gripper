@@ -20,6 +20,8 @@ limitations under the License.
   <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.urdf.xacro" />
   <xacro:include filename="$(find pal_urdf_utils)/urdf/materials.urdf.xacro" />
+
+  <xacro:property name="gazebo_version" default="$(arg gazebo_version)"/>
   <!-- Generic simulator_gazebo plugins -->
   <!-- ros2_control -->
   <xacro:include filename="$(find pal_gripper_description)/ros2_control/ros2_control.urdf.xacro" />
@@ -35,7 +37,7 @@ limitations under the License.
   <!--Spawn gripper-->
   <link name="base_link"/>
 
-  <xacro:pal_gripper parent="base_link" name="gripper" gazebo_version="$(arg gazebo_version)">
+  <xacro:pal_gripper parent="base_link" name="gripper">
     <origin xyz="0 0 0" rpy="${0 * deg_to_rad} ${-180 * deg_to_rad} 0" />
   </xacro:pal_gripper>
 

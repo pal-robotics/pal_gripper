@@ -24,6 +24,7 @@ from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
 from launch_pal.include_utils import include_scoped_launch_py_description
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_launch_py_description
+from launch_pal.robot_arguments import CommonArgs
 
 
 @dataclass(frozen=True)
@@ -32,12 +33,8 @@ class LaunchArguments(LaunchArgumentsBase):
         name='use_sim_time',
         default_value='True',
         description='Use simulation time')
-    
-    gazebo_version: DeclareLaunchArgument = DeclareLaunchArgument(
-        name='gazebo_version',
-        default_value='classic',
-        description='Gazebo version to use (gzclassic or gzsim)')
 
+    gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
 def get_model_paths(packages_names):
     model_paths = ''
