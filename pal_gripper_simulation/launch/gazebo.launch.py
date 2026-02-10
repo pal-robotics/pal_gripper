@@ -36,6 +36,7 @@ class LaunchArguments(LaunchArgumentsBase):
 
     gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
+
 def get_model_paths(packages_names):
     model_paths = ''
     for package_name in packages_names:
