@@ -2,6 +2,12 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* addition of property for gazebo_version
+* gazebo version arg missing
+* Contributors: Michela Cavuoto
+
 3.6.4 (2026-01-30)
 ------------------
 * Add support for new gazebo
