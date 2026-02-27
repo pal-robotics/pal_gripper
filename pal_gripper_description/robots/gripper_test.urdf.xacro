@@ -16,6 +16,10 @@ limitations under the License.
  -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro"
        name="pal_gripper">
+
+  <!-- Properties-->
+  <xacro:property name="calibration_tool" value="$(arg calibration_tool)" />
+
   <!--External resources-->
   <xacro:include filename="$(find pal_urdf_utils)/urdf/deg_to_rad.urdf.xacro" />
   <xacro:include filename="$(find pal_gripper_description)/urdf/gripper.urdf.xacro" />
@@ -37,7 +41,7 @@ limitations under the License.
   <!--Spawn gripper-->
   <link name="base_link"/>
 
-  <xacro:pal_gripper parent="base_link" name="gripper">
+  <xacro:pal_gripper parent="base_link" name="gripper" calibration_tool="${calibration_tool}">
     <origin xyz="0 0 0" rpy="${0 * deg_to_rad} ${-180 * deg_to_rad} 0" />
   </xacro:pal_gripper>
 
