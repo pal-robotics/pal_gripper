@@ -9,8 +9,18 @@ ${EE_SIDE_PREFIX}_controller:
     state_interfaces:
       - position
 
-    open_loop_control: true
+    gains:
+      ${EE_SIDE_PREFIX}_right_finger_joint:
+        p: 0.0
+        i: 0.0
+        d: 0.0
+      ${EE_SIDE_PREFIX}_left_finger_joint:
+        p: 0.0
+        i: 0.0
+        d: 0.0
 
+    interpolate_from_desired_state: true
+    
     constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 5.0
