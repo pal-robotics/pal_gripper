@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.6.6 (2026-04-13)
+------------------
 * add calibration tool
 * Contributors: susannamastromauro
 
