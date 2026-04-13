@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add calibration tool
+* Contributors: susannamastromauro
+
 3.6.5 (2026-02-10)
 ------------------
 * addition of property for gazebo_version
