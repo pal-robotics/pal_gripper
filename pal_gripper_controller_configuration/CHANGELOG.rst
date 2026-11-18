@@ -2,6 +2,11 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Bump cmake_minimum_required to 3.10
+* Contributors: Mathias Lüdtke
+
 3.6.6 (2026-04-13)
 ------------------
 * Fixing open loop param
