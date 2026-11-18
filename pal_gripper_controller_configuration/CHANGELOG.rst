@@ -2,8 +2,8 @@
 Changelog for package pal_gripper_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.6.7 (2026-11-19)
+------------------
 * Bump cmake_minimum_required to 3.10
 * Contributors: Mathias Lüdtke
 
